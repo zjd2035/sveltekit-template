@@ -1,0 +1,1 @@
+<p>You should hopefully get logged out now...</p>
