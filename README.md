@@ -5,9 +5,7 @@
 ```bash
 cd ~/Projects/
 mkdir new-app
-cd sveltekit-template/
-cp -R . ../new-app/
-cd ../new-app/
+rsync -r --exclude=.git --exclude=node_modules ./sveltekit-template/ ./new-app/
 ```
 
 
@@ -26,7 +24,7 @@ git push origin main
 ```
 
 
-1. Setup postgres on your local machine.
+1. Setup postgres on your local machine (if you don't already have it).
 
 ```bash
 brew install postgresql@15
@@ -100,7 +98,7 @@ PFI_DB_PORT=5432
 1. Install your dependencies
 
 ```bash
-pnpm dlx  sv add tailwindcss
+pnpm dlx sv add tailwindcss
 pnpm i
 ```
 
@@ -111,4 +109,4 @@ pnpm i
 pnpm dev
 ```
 
-Check [your new app](http://localhost:5173/) out in your browser!
+Check out [your app](http://localhost:5173/) out in the browser!
