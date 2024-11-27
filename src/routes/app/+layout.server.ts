@@ -1,10 +1,8 @@
-
 import { redirect } from '@sveltejs/kit'
 
-// TODO: CHECK IF THE USER HAS A SESSION IN THE LOAD FUNCTION
-// KICK THEM OUT IF NOT!
 export const load = ({ locals }) => {
+  // If the user doesn't have an active session, redirect them to login
   if (!locals.hasValidSession || !locals.user || !locals.session) {
-    redirect(302, '/');
+    redirect(302, '/auth/login');
   }
 }
